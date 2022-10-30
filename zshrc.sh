@@ -21,6 +21,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
    #mac make path
    export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+
+   # for substring search
+   bindkey '^[[B' history-substring-search-down
+   bindkey '^[[A' history-substring-search-up
 else
    # for gce worker
    export ZSH="/home/michaelbutler/.oh-my-zsh"                                          
@@ -28,10 +32,6 @@ else
 
 ZSH_THEME="robbyrussell"
 
-
-#for substring search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 
 plugins=(git autojump auto-notify zsh-history-substring-search  
 zsh-autosuggestions zsh-syntax-highlighting)
