@@ -8,7 +8,7 @@ fi
 
 # Path to your oh-my-zsh installation.                                        
 
-source py.sh
+source ~/.shell/py.sh
 
 if [[ "$(uname)" == "Darwin" ]]; then
    
@@ -57,7 +57,7 @@ AUTO_NOTIFY_IGNORE+=("docker","vim","git commit","less","ssh")
 
 source $ZSH/oh-my-zsh.sh
 
-source p10k.zsh
+source ~/.shell/p10k.zsh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
