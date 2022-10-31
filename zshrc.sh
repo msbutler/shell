@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Ensure python path is set before setting up zsh
+# TODO: add languages to zsh_profile
 source ~/.shell/py.sh
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -21,11 +23,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
    export GOROOT="$(brew --prefix go)/libexec"
    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-
-   export PATH="/usr/local/opt/python@3.7/bin:$PATH" 
-
-
-   #mac make path
+   # mac make path
    export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
    # for substring search
@@ -54,13 +52,6 @@ AUTO_NOTIFY_IGNORE+=("docker","vim","git commit","less","ssh")
 source $ZSH/oh-my-zsh.sh
 
 source ~/.shell/p10k.zsh
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 
 for i in ~/.shell/setups/*; do
   source $i
