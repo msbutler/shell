@@ -1,6 +1,8 @@
 
 # Path to your oh-my-zsh installation.                                        
 
+source py.sh
+
 if [[ "$(uname)" == "Darwin" ]]; then
    
    export ZSH="/Users/michaelbutler/.oh-my-zsh"                                          
@@ -28,7 +30,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
    # for gce worker
    export ZSH="/home/michaelbutler/.oh-my-zsh"                                          
- fi        
+ 
+  [[ -s /home/michaelbutler/.autojump/etc/profile.d/autojump.sh ]] && source /home/michaelbutler/.autojump/etc/profile.d/autojump.sh
+
+	autoload -U compinit && compinit -u
+  fi        
 
 ZSH_THEME="robbyrussell"
 
