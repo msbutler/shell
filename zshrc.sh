@@ -5,9 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
-# Path to your oh-my-zsh installation.                                        
-
 source ~/.shell/py.sh
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -52,7 +49,6 @@ zsh-autosuggestions zsh-syntax-highlighting)
 # Set threshold to 20seconds
 export AUTO_NOTIFY_THRESHOLD=20
 
-# Add docker to list of ignored commands
 AUTO_NOTIFY_IGNORE+=("docker","vim","git commit","less","ssh")
 
 source $ZSH/oh-my-zsh.sh
@@ -66,11 +62,7 @@ source ~/.shell/p10k.zsh
 #   export EDITOR='mvim'
 # fi
 
-for i in ~/.shell/aliases/*; do
-  source $i
-done
-
-for i in ~/.shell/tools.d/*; do
+for i in ~/.shell/setups/*; do
   source $i
 done
 
