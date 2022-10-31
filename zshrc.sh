@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 
 # Path to your oh-my-zsh installation.                                        
 
@@ -36,7 +43,7 @@ else
 	autoload -U compinit && compinit -u
   fi        
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 plugins=(git autojump auto-notify zsh-history-substring-search  
@@ -49,6 +56,8 @@ export AUTO_NOTIFY_THRESHOLD=20
 AUTO_NOTIFY_IGNORE+=("docker","vim","git commit","less","ssh")
 
 source $ZSH/oh-my-zsh.sh
+
+source p10k.zsh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -68,4 +77,3 @@ done
 
 export PATH="/usr/local/opt/go@1.17/bin:$PATH"
 export PATH="/usr/local/opt/go@1.19/bin:$PATH"
-
