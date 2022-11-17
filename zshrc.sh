@@ -8,6 +8,7 @@ fi
 # Ensure python path is set before setting up zsh
 # TODO: add languages to zsh_profile
 source ~/.shell/py.sh
+source ~/.shell/go.sh
 
 if [[ "$(uname)" == "Darwin" ]]; then
    
@@ -15,13 +16,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
    
    # a couple helpers on my mac that haven't gotten checked in yet
    source ~/bin/helpers.sh
-
-   # haven't migrated go things yet to the repo
-
-   # proper go paths
-   export GOPATH=~/go
-   export GOROOT="$(brew --prefix go)/libexec"
-   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
    # mac make path
    export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
@@ -37,7 +31,7 @@ else
 
 	autoload -U compinit && compinit -u
   fi        
-
+  
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
