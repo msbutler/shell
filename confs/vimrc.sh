@@ -2,7 +2,6 @@
 set colorcolumn=80
 
 set hlsearch 
-set number 
 set noswapfile 
 set ignorecase 
 set incsearch 
