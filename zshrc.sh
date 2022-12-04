@@ -36,12 +36,15 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 plugins=(git autojump auto-notify zsh-history-substring-search  
-zsh-autosuggestions zsh-syntax-highlighting)
+zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 # Set threshold to 20seconds
 export AUTO_NOTIFY_THRESHOLD=20
 
 AUTO_NOTIFY_IGNORE+=("docker","vim","git commit","less","ssh")
+
+# add glean quicksearch
+ZSH_WEB_SEARCH_ENGINES=(glean "https://app.glean.com/?q=")
 
 source $ZSH/oh-my-zsh.sh
 
