@@ -15,7 +15,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
    export ZSH="/Users/michaelbutler/.oh-my-zsh"                                          
    
    # a couple helpers on my mac that haven't gotten checked in yet
-   source ~/bin/helpers.sh
+   # source ~/bin/helpers.sh
 
    # mac make path
    export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
@@ -54,6 +54,4 @@ for i in ~/.shell/setups/*; do
   source $i
 done
 
-
-export PATH="/usr/local/opt/go@1.17/bin:$PATH"
-export PATH="/usr/local/opt/go@1.19/bin:$PATH"
+set -o vi
