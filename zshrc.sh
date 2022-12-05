@@ -35,8 +35,11 @@ else
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
-plugins=(git autojump auto-notify zsh-history-substring-search  
+plugins=(git vi-mode autojump auto-notify zsh-history-substring-search  
 zsh-autosuggestions zsh-syntax-highlighting web-search)
+
+# Enter vi mode on cli with ctrl j
+bindkey -M viins '^j' vi-cmd-mode
 
 # Set threshold to 20seconds
 export AUTO_NOTIFY_THRESHOLD=20
@@ -54,4 +57,3 @@ for i in ~/.shell/setups/*; do
   source $i
 done
 
-set -o vi

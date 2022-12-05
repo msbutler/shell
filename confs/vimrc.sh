@@ -1,10 +1,16 @@
 " create red line at max line
 set colorcolumn=80
 
+" line numbers
+set number
+
+" set status bar
+set laststatus=2
+
 set hlsearch 
 set noswapfile 
 set ignorecase 
-set incsearch 
+" set incsearch 
 
 syntax on
 
