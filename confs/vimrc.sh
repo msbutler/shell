@@ -24,7 +24,7 @@ endif
 set textwidth=79
 set wrap
 
-" set automatic line wrapping
-set fo-=l
+" set automatic line wrapping (comment out for now)
+" set fo-=l
 
 :imap jj <Esc>
