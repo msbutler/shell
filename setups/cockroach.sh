@@ -60,5 +60,5 @@ function binaries() {
 
 function mbfmt() {                                                              
     echo crlfmt                                                              
-    git diff-tree --no-commit-id --name-only -r HEAD | grep '.go' | xargs -n1 bin/crlfmt  -tab 2 -w
+    git diff-tree --no-commit-id --name-only -r HEAD | grep '.go' | xargs -n1 crlfmt  -tab 2 -w
   }   
