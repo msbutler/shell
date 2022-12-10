@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Ensure python path is set before setting up zsh
-# TODO: add languages to zsh_profile
+# TODO: add languages to zsh_profile 
 source ~/.shell/py.sh
 source ~/.shell/go.sh
 

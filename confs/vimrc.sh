@@ -22,6 +22,9 @@ set ignorecase
 nnoremap n nzz
 nnoremap N Nzz
 
+" exit insert mode more easily
+inoremap jk <esc>
+
 syntax on
 
 if system('uname -s') == "Darwin\n"
