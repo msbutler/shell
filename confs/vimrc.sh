@@ -3,14 +3,24 @@ set colorcolumn=80
 
 " line numbers
 set number
+set relativenumber
 
 " set status bar
 set laststatus=2
 
-set hlsearch 
+
+
 set noswapfile 
+
+" ignore casing during search
 set ignorecase 
+
+" show partial matches
 " set incsearch 
+
+" make search iterations automatically center on the screen
+nnoremap n nzz
+nnoremap N Nzz
 
 syntax on
 

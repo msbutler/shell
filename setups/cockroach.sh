@@ -61,4 +61,9 @@ function binaries() {
 function mbfmt() {                                                              
     echo crlfmt                                                              
     git diff-tree --no-commit-id --name-only -r HEAD | grep '.go' | xargs -n1 crlfmt  -tab 2 -w
-  }   
+  }
+
+function user() {
+  roachprod list | grep \'$CLUSTER\'
+  roachprod sql $1 --secure -- -e "CREATE ROLE \"michael\" WITH LOGIN PASSWORD 'butler'"
+}   
