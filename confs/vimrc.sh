@@ -22,9 +22,7 @@ endif
 
 " max char length of line
 set textwidth=79
+
+" Visually wraps long line in the terminal pane
 set wrap
 
-" set automatic line wrapping (comment out for now)
-" set fo-=l
-
-:imap jj <Esc>
