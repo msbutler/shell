@@ -39,7 +39,10 @@ plugins=(git vi-mode autojump auto-notify zsh-history-substring-search
 zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 # Enter vi mode on cli with ctrl j
-bindkey -M viins '^j' vi-cmd-mode
+bindkey -M viins 'jk' vi-cmd-mode
+
+# Ensure insert mode is a cursor
+VI_MODE_SET_CURSOR=true
 
 # Set threshold to 20seconds
 export AUTO_NOTIFY_THRESHOLD=20
