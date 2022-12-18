@@ -14,6 +14,9 @@ set ignorecase
 " show partial matches
 " set incsearch 
 
+" ensure l and h can move to next/last line
+set whichwrap=lh
+
 " make search iterations automatically center on the screen
 nnoremap n nzz
 nnoremap N Nzz

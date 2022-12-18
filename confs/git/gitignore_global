@@ -35,3 +35,6 @@ out
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# temp vim file
+*.swp

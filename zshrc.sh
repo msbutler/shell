@@ -43,7 +43,7 @@ else
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
-plugins=(git vi-mode autojump auto-notify zsh-history-substring-search  
+plugins=(git vi-mode autojump zsh-history-substring-search  
 zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 # Enter vi mode on cli with ctrl j
@@ -53,9 +53,10 @@ bindkey -M viins 'jk' vi-cmd-mode
 VI_MODE_SET_CURSOR=true
 
 # Set threshold to 20seconds
-export AUTO_NOTIFY_THRESHOLD=20
+# Auto notify no longer enabled
+# export AUTO_NOTIFY_THRESHOLD=20
 
-AUTO_NOTIFY_IGNORE+=("docker","vim","git commit","less","ssh")
+# AUTO_NOTIFY_IGNORE+=("docker","vim","git commit","less","ssh")
 
 # add glean quicksearch
 ZSH_WEB_SEARCH_ENGINES=(glean "https://app.glean.com/?q=")
