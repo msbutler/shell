@@ -4,7 +4,8 @@
 if [[ -e /usr/bin/python ]]; then
   export PATH="/usr/bin/python:$PATH"
 elif [[ -e /usr/local/bin/python3 ]]; then
-  # brew version
-  export PATH="/usr/local/bin/python3:$PATH"
-  alias python=/usr/local/bin/python3
+  # brew version which contains all sorts of nice unversioned symlinks
+  # run 'brew info python' to get path
+  export PATH="/usr/local/opt/python@3.10/libexec/bin:$PATH"
+  
 fi
