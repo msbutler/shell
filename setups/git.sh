@@ -13,3 +13,12 @@ function gbs() {
   git switch $1
   git log --oneline | head -n 3
 }
+
+
+# force sync local branch to remote (git reset remote)
+function grr(){
+  branch=$(git rev-parse --abbrev-ref HEAD)
+  # TODO: consider making a backup of the local branch
+  git fetch
+  git reset --hard @{u}
+}
