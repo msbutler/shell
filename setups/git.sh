@@ -2,9 +2,12 @@
 
 alias g="git"
 
-# push current branch to butler remote
-alias gp="git push -u butler HEAD"
-alias gpf="git push -u butler HEAD -f"
+# quickly add working tree to previous commit
+alias gam="git add .; git commit --amend --no-edit"
+
+# add, commit, and push current branch to butler remote
+alias gp="gam; git push -u butler HEAD"
+alias gpf="gam; git push -u butler HEAD -f"
 
 # create a new branch off the current one and switch to it
 unalias gbs
