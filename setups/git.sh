@@ -9,6 +9,22 @@ alias gam="git add .; git commit --amend --no-edit"
 alias gp="gam; git push -u butler HEAD"
 alias gpf="gam; git push -u butler HEAD -f"
 
+# view branches that regex match
+function gbv() {
+  git branch | grep "$1"
+}
+
+# delete branches that regex match
+unalias gbd
+function gbd() {
+  gbv $1
+  echo "Press y to delete these branches"
+  read ans
+  if [[ $ans == "y" ]]; then
+    git branch | grep "$1" | xargs git branch -D
+  fi
+}
+
 # create a new branch off the current one and switch to it
 unalias gbs
 function gbs() {
@@ -16,7 +32,6 @@ function gbs() {
   git switch $1
   git log --oneline | head -n 3
 }
-
 
 # force sync local branch to remote (git reset remote)
 function grr(){
