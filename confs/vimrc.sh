@@ -24,6 +24,9 @@ nnoremap N Nzz
 " exit insert mode more easily
 inoremap jk <esc>
 
+" Delete current line without yanking the line breaks
+nnoremap dil ^d$
+
 syntax on
 
 " ensure vim can connect to system clipboard
