@@ -21,6 +21,11 @@ set whichwrap=lh
 nnoremap n nzz
 nnoremap N Nzz
 
+" [half] page toggle up and down center on the screen
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
+
 " exit insert mode more easily
 inoremap jk <esc>
 
