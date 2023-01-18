@@ -1,8 +1,5 @@
 
-if [ -f ~/.aws-access-key ]; then
-  export AWS_ACCESS_KEY="$(cat ~/.aws-access-key)"
-fi
-
-if [ -f ~/.aws-secret-key ]; then
-  export AWS_SECRET_KEY="$(cat ~/.aws-secret-key)"
+if [ -d ~/.aws ]; then
+  export AWS_ACCESS_KEY_ID="$(aws configure get aws_access_key_id)"
+  export AWS_SECRET_ACCESS_KEY="$(aws configure get aws_secret_access_key)"
 fi
