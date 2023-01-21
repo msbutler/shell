@@ -14,6 +14,9 @@ set ignorecase
 " show partial matches
 " set incsearch 
 
+" display letters being typed into normal/visual mode at bottom of vim cli
+set showcmd
+
 " ensure l and h can move to next/last line
 set whichwrap=lh
 
