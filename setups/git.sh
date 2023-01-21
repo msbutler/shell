@@ -11,7 +11,7 @@ alias gpf="gam; git push -u butler HEAD -f"
 
 # view branches that regex match
 function gbv() {
-  git branch | grep "$1"
+  git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)' | grep "$1" | sort -r
 }
 
 # delete branches that regex match
