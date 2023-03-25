@@ -50,17 +50,19 @@ function grr(){
 function gdd(){
  
  # first check if there any uncommitted files
- if [[ -n $(git status -s) ]]; then
-
-   git status
-   echo "Press y to delete uncommited stuff"
+ if [[ -n $(git diff HEAD --name-only) ]] || [[ -n $(git clean -dfn) ]]; then
+   echo "added files"
+   git diff HEAD --name-only
+   echo "\nuntracked files:"
+   git clean -dfn
+   echo "\nPress y to delete uncommited stuff"
    read ans
    if [[ $ans == "y" ]]; then
      # removes files that have been git added
      git reset --hard @{u}
 
      # removes files that have not been git added
-     git clean -df
+     git clean -dfq
      fi
   fi
 }
