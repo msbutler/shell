@@ -43,5 +43,14 @@ function grr(){
   branch=$(git rev-parse --abbrev-ref HEAD)
   # TODO: consider making a backup of the local branch
   git fetch
-  git reset --hard @{u}
+  gdd
+}
+
+# discard uncommitted stuff, but NOT .gitignored stuff.
+function gdd(){
+ # removes files that have been git added
+ git reset --hard @{u}
+
+ # removes files that have not been git added
+ git clean -df
 }
