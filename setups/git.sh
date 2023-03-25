@@ -14,6 +14,11 @@ function gbv() {
   git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)' | grep "$1" | sort -r
 }
 
+# switch branch
+function gs(){
+ git switch $1
+}
+
 # delete branches that regex match
 unalias gbd
 function gbd() {
