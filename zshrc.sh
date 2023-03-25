@@ -44,7 +44,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 plugins=(git vi-mode autojump zsh-history-substring-search  
-zsh-autosuggestions zsh-syntax-highlighting web-search)
+zsh-autosuggestions zsh-syntax-highlighting)
 
 # Enter vi mode on cli with ctrl j
 bindkey -M viins 'jk' vi-cmd-mode
@@ -59,7 +59,7 @@ VI_MODE_SET_CURSOR=true
 # AUTO_NOTIFY_IGNORE+=("docker","vim","git commit","less","ssh")
 
 # add glean quicksearch
-ZSH_WEB_SEARCH_ENGINES=(glean "https://app.glean.com/?q=")
+# ZSH_WEB_SEARCH_ENGINES=(glean "https://app.glean.com/?q=")
 
 source $ZSH/oh-my-zsh.sh
 
