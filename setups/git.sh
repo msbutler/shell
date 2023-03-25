@@ -48,9 +48,19 @@ function grr(){
 
 # discard uncommitted stuff, but NOT .gitignored stuff.
 function gdd(){
- # removes files that have been git added
- git reset --hard @{u}
+ 
+ # first check if there any uncommitted files
+ if [[ -n $(git status -s) ]]; then
 
- # removes files that have not been git added
- git clean -df
+   git status
+   echo "Press y to delete uncommited stuff"
+   read ans
+   if [[ $ans == "y" ]]; then
+     # removes files that have been git added
+     git reset --hard @{u}
+
+     # removes files that have not been git added
+     git clean -df
+     fi
+  fi
 }
