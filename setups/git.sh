@@ -43,6 +43,11 @@ function grr(){
   branch=$(git rev-parse --abbrev-ref HEAD)
   # TODO: consider making a backup of the local branch
   git fetch
+
+  # First reset branch so all commits match remote
+  git reset --hard @{u}
+  
+  # Then get rid of untracked stuff
   gdd
 }
 
