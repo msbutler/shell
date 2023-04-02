@@ -30,7 +30,7 @@ nnoremap <C-d> <C-d>zz
 
 " delete to null register
 noremap r "_d
-
+noremap rr "_dd
 
 " exit insert mode more easily
 inoremap jk <esc>
