@@ -28,6 +28,9 @@ nnoremap N Nzz
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
+" delete to null register
+noremap r "_d
+
 
 " exit insert mode more easily
 inoremap jk <esc>
@@ -44,12 +47,13 @@ else
   set clipboard=unnamedplus "Linux
 endif
 
-" max char length of line (commenting out for now to see if it prevents auto
-" multi line wrapping
-" set textwidth=79
-
 " Visually wraps long line in the terminal pane
 set wrap
+
+" attempt to make tabs 2 spaces in width
+set noexpandtab
+set tabstop=2
+set shiftwidth=2
 
 " Use a line cursor within insert mode and a block cursor everywhere else.
 "
