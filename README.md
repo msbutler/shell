@@ -8,3 +8,6 @@ Other parts of setup to note:
 - in iterm, use configure infinite scrollback
 - in non-insert mode, change the iterm font color to black to make the
   highlighted characters clearer.
+
+Good Tools to Install
+- ag:  quick file search

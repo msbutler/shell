@@ -80,4 +80,5 @@ function gbi(){
  git bisect good
  git bisect bad
  git bisect run ./$3
+ git bisect reset
 }
