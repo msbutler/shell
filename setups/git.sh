@@ -72,13 +72,13 @@ function gdd(){
   fi
 }
 
-# bisect
-# gbi(bad_sha,good_sha,bash_script)
 function gbi(){
+ # gbi(bad_sha,good_sha,bash_script)
  chmod +x $3
  git bisect start $1 $2
  git bisect good
  git bisect bad
  git bisect run ./$3
+ git bisect log
  git bisect reset
 }
