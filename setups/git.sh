@@ -1,5 +1,6 @@
 #git
-
+unalias gbs
+unalias gbd
 alias g="git"
 
 # quickly add working tree to previous commit
@@ -14,13 +15,24 @@ function gbv() {
   git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)' | grep "$1" | sort -r
 }
 
+# push an experimental version of the current branch, avoiding 
+function gpe() {
+  gam
+  branch=$(git branch --show-current)
+  exp="e-$branch"
+  echo "deleting old experimental branch, if necessary"
+  gbd $exp
+  gbs $exp
+  gpf 
+  g switch $branch
+}
+
 # switch branch
 function gs(){
  git switch $1
 }
 
 # delete branches that regex match
-unalias gbd
 function gbd() {
   gbv $1
   echo "Press y to delete these branches"
@@ -31,7 +43,6 @@ function gbd() {
 }
 
 # create a new branch off the current one and switch to it
-unalias gbs
 function gbs() {
   git branch $1
   git switch $1
@@ -72,6 +83,9 @@ function gdd(){
   fi
 }
 
+
+
+# git bisect helper
 function gbi(){
  # gbi(bad_sha,good_sha,bash_script)
  chmod +x $3

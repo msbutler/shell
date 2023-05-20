@@ -66,4 +66,20 @@ function mbfmt() {
 function user() {
   roachprod list | grep \'$CLUSTER\'
   roachprod sql $1 --secure -- -e "CREATE ROLE \"michael\" WITH LOGIN PASSWORD 'butler'"
+}
+
+function gce_clean() {
+ cd .
+ echo "Before"
+ du -h | sort -hr | head -10
+ # TODO add docker removal
+ echo "remove docker images manually for now"
+ sudo du -hs /var/lib/docker
+ cd $GOPATH/src/github.com/cockroachdb/cockroach
+ ./dev cache --down
+ ./dev cache --clean
+ bazel clean --expunge
+ cd .
+ echo "After"
+ du -h | sort -hr | head -10
 }   
