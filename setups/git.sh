@@ -54,7 +54,7 @@ function grr(){
   branch=$(git rev-parse --abbrev-ref HEAD)
   
   if [[ "$(uname)" == "Darwin" ]]; then
-echo "\n On mac. Really want to for pull? If so, press y"
+echo "\n On mac. Really want to force pull? If so, press y"
    read ans
    if [[ $ans != "y" ]]; then
       exit 0
