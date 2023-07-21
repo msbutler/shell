@@ -52,8 +52,17 @@ function gbs() {
 # force sync local branch to remote (git reset remote)
 function grr(){
   branch=$(git rev-parse --abbrev-ref HEAD)
+  
+  if [[ "$(uname)" == "Darwin" ]]; then
+echo "\n On mac. Really want to for pull? If so, press y"
+   read ans
+   if [[ $ans != "y" ]]; then
+      exit 0
+   fi
+  fi
+
   # TODO: consider making a backup of the local branch
-  git fetch
+  git fetch butler
 
   # First reset branch so all commits match remote
   git reset --hard @{u}
