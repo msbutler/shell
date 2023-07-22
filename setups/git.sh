@@ -57,7 +57,7 @@ function grr(){
 echo "\n On mac. Really want to force pull? If so, press y"
    read ans
    if [[ $ans != "y" ]]; then
-      exit 0
+      return
    fi
   fi
 
