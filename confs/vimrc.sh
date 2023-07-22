@@ -29,8 +29,12 @@ nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
 " delete to null register
-noremap r "_d
-noremap rr "_dd
+noremap d "_d
+noremap dd "_dd
+
+" cut
+noremap r d
+noremap rr dd
 
 " exit insert mode more easily
 inoremap jk <esc>
