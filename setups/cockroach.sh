@@ -21,6 +21,16 @@ export ALWAYS_RUN_GAZELLE=1
 export MACOSX_DEPLOYMENT_TARGET=12.0
 
 
+if [[ -d "${GOPATH}/src/github.com/cockroachlabs/managed-service" ]]; then
+  export PATH=${PATH}:${GOPATH}/src/github.com/cockroachlabs/managed-service/bin
+fi
+
+#export VAULT_ADDR="https://127.0.0.1:8201"
+#export VAULT_CACERT="$PATH_TO_MANAGED_SERVICE/pkg/config/vault.staging.ca.crt.pem"
+## ensure you are logged into Vault first with `admin-cli vault login staging`
+#export VAULT_TOKEN=$(cat ~/.vault-token.staging)
+
+
 function cla() {
   curl -H "Authorization: token $GITHUB_TOKEN" \
     -d '{"state": "success", "context":"license/cla", "description": "curl"}' \
@@ -36,17 +46,22 @@ function binaries() {
  roachprod destroy local 
  roachprod create -n 1 local
  
+ os="linux"
+ if [[ "$3" == "darwin" ]]; then
+   os="darwin"
+ fi
+ 
  if [[ "$1" == "master" ]]; then
    roachprod stage local cockroach --os linux
    roachprod stage local workload --os linux
    mv ~/local/1/workload workload
  elif [[ "$1" == "sha" ]]; then
-   roachprod stage local cockroach $2 --os linux
-   roachprod stage local workload $2 --os linux
+   roachprod stage local cockroach $2 --os $os
+   roachprod stage local workload $2 --os $os
    mv ~/local/1/workload workload
  
  elif [[ "$1" == "release" ]]; then
-   roachprod stage local release $2 --os linux
+   roachprod stage local release $2 --os $os
  else
    echo "invalid args: kind $1; target $2"
    return 1

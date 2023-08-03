@@ -38,7 +38,7 @@ else
   [[ -s /home/michaelbutler/.autojump/etc/profile.d/autojump.sh ]] && source /home/michaelbutler/.autojump/etc/profile.d/autojump.sh
 
 	autoload -U compinit && compinit -u
-  fi        
+fi        
   
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -69,3 +69,7 @@ for i in ~/.shell/setups/*; do
   source $i
 done
 
+
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
