@@ -25,11 +25,6 @@ if [[ -d "${GOPATH}/src/github.com/cockroachlabs/managed-service" ]]; then
   export PATH=${PATH}:${GOPATH}/src/github.com/cockroachlabs/managed-service/bin
 fi
 
-#export VAULT_ADDR="https://127.0.0.1:8201"
-#export VAULT_CACERT="$PATH_TO_MANAGED_SERVICE/pkg/config/vault.staging.ca.crt.pem"
-## ensure you are logged into Vault first with `admin-cli vault login staging`
-#export VAULT_TOKEN=$(cat ~/.vault-token.staging)
-
 
 function cla() {
   curl -H "Authorization: token $GITHUB_TOKEN" \
