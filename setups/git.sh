@@ -27,11 +27,6 @@ function gpe() {
   g switch $branch
 }
 
-# switch branch
-function gs(){
- git switch $1
-}
-
 # delete branches that regex match
 function gbd() {
   gbv $1
