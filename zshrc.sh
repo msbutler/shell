@@ -20,7 +20,7 @@ source ~/.shell/go.sh
 
 if [[ "$(uname)" == "Darwin" ]]; then
    
-   export ZSH="/Users/michaelbutler/.oh-my-zsh"                                          
+   export ZSH="/Users/butler/.oh-my-zsh"                                          
    
    # a couple helpers on my mac that haven't gotten checked in yet
    # source ~/bin/helpers.sh
@@ -33,7 +33,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
    bindkey '^[[A' history-substring-search-up
 else
    # for gce worker
-   export ZSH="/home/michaelbutler/.oh-my-zsh"                                          
+   export ZSH="/home/butler/.oh-my-zsh"                                          
  
   [[ -s /home/michaelbutler/.autojump/etc/profile.d/autojump.sh ]] && source /home/michaelbutler/.autojump/etc/profile.d/autojump.sh
 

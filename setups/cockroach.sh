@@ -10,6 +10,9 @@ if [ -f ~/.github_token ]; then
    export GITHUB_TOKEN="$(cat ~/.github_token)"                        
 fi  
 
+# gceworker
+export GCEWORKER_NAME=gceworker-butler
+
 # roachprod
 export CLUSTER=butler-test
 ROACHPROD_USER=butler
