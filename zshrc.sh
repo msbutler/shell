@@ -35,14 +35,15 @@ else
    # for gce worker
    export ZSH="/home/butler/.oh-my-zsh"                                          
  
-  [[ -s /home/michaelbutler/.autojump/etc/profile.d/autojump.sh ]] && source /home/michaelbutler/.autojump/etc/profile.d/autojump.sh
+  [[ -s /home/butler/.autojump/etc/profile.d/autojump.sh ]] && source /home/butler/.autojump/etc/profile.d/autojump.sh
 
 	autoload -U compinit && compinit -u
 fi        
   
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-
+# install all of these except autojump via cloning into oh my zsh repo
+# sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 plugins=(git vi-mode autojump zsh-history-substring-search  
 zsh-autosuggestions zsh-syntax-highlighting)
 
