@@ -5,6 +5,20 @@
     80,
     100
   ],
+  "vim.vimrc.enable": true,
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "block",
+  "vim.cursorStylePerMode.visual": "block",
+	"editor.cursorBlinking": "solid",
+	"gitlens.currentLine.enabled": false,
+	"gitlens.hovers.currentLine.over": "line",
+	"gitlens.hovers.enabled": false,
+	"files.autoSave": "afterDelay",
+	"editor.quickSuggestions": {
+			"other": false,
+			"comments": false,
+			"strings": false
+	},
   "editor.detectIndentation": true,
   "editor.tabSize": 2,
   "files.exclude": {
