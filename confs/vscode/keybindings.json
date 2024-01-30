@@ -1,27 +1,6 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-    {
-        "key": "shift+cmd+r",
-        "command": "-rerunSearchEditorSearch",
-        "when": "inSearchEditor"
-    },
-    {
-        "key": "shift+cmd+r",
-        "command": "workbench.action.showAllSymbols"
-    },
-    {
-        "key": "cmd+t",
-        "command": "-workbench.action.showAllSymbols"
-    },
-    {
-        "key": "cmd+t",
-        "command": "workbench.action.quickOpen"
-    },
-    {
-        "key": "cmd+p",
-        "command": "-workbench.action.quickOpen"
-    },
-    {
+		{
         "key": "cmd+r",
         "command": "workbench.action.gotoSymbol"
     },
