@@ -11,3 +11,6 @@ ln -sf ~/.shell/confs/ideavimrc.sh ~/.ideavimrc
 ln -sf ~/.shell/confs/git/gitconfig ~/.gitconfig
 ln -sf ~/.shell/confs/git/gitignore_global ~/.gitignore_global
 
+mkdir -p ~/Library/Application\ Support/Code/User
+ln -sf ~/.shell/confs/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sf ~/.shell/confs/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json

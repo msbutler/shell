@@ -1,0 +1,98 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "editor.disableTranslate3d": true,
+  "editor.rulers": [
+    80,
+    100
+  ],
+  "editor.detectIndentation": true,
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/*~": true,
+    "bazel-*/": true,
+    "build/builder_home/**": true
+  },
+  "workbench.editor.enablePreview": false,
+  "cSpell.userWords": [
+    "backupccl",
+    "bytea",
+    "callsite",
+    "callsites",
+    "cockroachdb",
+    "crdb",
+    "deps",
+    "descs",
+    "distsqlpb",
+    "Errorf",
+    "Eventf",
+    "Failedf",
+    "Failf",
+    "grpc",
+    "humanizeutil",
+    "importccl",
+    "Infof",
+    "intervalccl",
+    "jobspb",
+    "LDFLAGS",
+    "leveldb",
+    "loggable",
+    "MVCC",
+    "mysqldump",
+    "mysqlout",
+    "MYSQLOUTFILE",
+    "Newf",
+    "nocgo",
+    "nullif",
+    "pgcopy",
+    "PGDUMP",
+    "pgerror",
+    "pkey",
+    "Postgres",
+    "randutil",
+    "roachpb",
+    "rocksdb",
+    "sampledataccl",
+    "serverpb",
+    "Sprintf",
+    "sst",
+    "sstable",
+    "ssts",
+    "Stmts",
+    "storageccl",
+    "struct",
+    "testutils",
+    "unencrypted",
+    "Unimplementedf",
+    "Vals",
+    "Warningf",
+    "Wrapf"
+  ],
+  "git.autorefresh": false,
+  "files.eol": "\n",
+  "files.watcherExclude": {
+    "vendor/**": true
+  },
+  "search.exclude": {
+    "c-deps/**": true,
+    "pkg/ui/yarn**": true,
+    "vendor/**": true
+  },
+  "go.useLanguageServer": true,
+  "gopls": {
+    // If true, enable additional analyses with staticcheck.
+    // Warning: This will significantly increase memory usage.
+    "staticcheck": false,
+  },
+  "go.formatTool": "goimports",
+  "editor.largeFileOptimizations": false,
+  "json.maxItemsComputed": 50000,
+  "terminal.integrated.scrollback": 100000,
+  "diffEditor.renderSideBySide": false,
+  "extensions.ignoreRecommendations": true,
+  "githubPullRequests.remotes": [
+    "upstream"
+  ],
+  "workbench.startupEditor": "none",
+  "go.toolsManagement.autoUpdate": true,
+  "bazel.queriesShareServer": true,
+}
