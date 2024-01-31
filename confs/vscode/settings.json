@@ -91,7 +91,7 @@
     "pkg/ui/yarn**": true,
     "vendor/**": true
   },
-//  "go.useLanguageServer": true,
+  "go.useLanguageServer": true,
   "gopls": {
     // If true, enable additional analyses with staticcheck.
     // Warning: This will significantly increase memory usage.
@@ -108,5 +108,13 @@
   ],
   "workbench.startupEditor": "none",
   "go.toolsManagement.autoUpdate": true,
-  //"bazel.queriesShareServer": true,
+  "bazel.queriesShareServer": true,
+  "[go]": {
+    "editor.inlineSuggest.enabled": true,
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
 }
