@@ -45,21 +45,22 @@ function binaries() {
  roachprod create -n 1 local
  
  os="linux"
+arch="amd64"
  if [[ "$3" == "darwin" ]]; then
    os="darwin"
  fi
  
  if [[ "$1" == "master" ]]; then
-   roachprod stage local cockroach --os linux
-   roachprod stage local workload --os linux
+   roachprod stage local cockroach --os linux --arch $arch
+   roachprod stage local workload --os linux --arch $arch
    mv ~/local/1/workload workload
  elif [[ "$1" == "sha" ]]; then
-   roachprod stage local cockroach $2 --os $os
-   roachprod stage local workload $2 --os $os
+   roachprod stage local cockroach $2 --os $os --arch $arch
+   roachprod stage local workload $2 --os $os --arch $arch
    mv ~/local/1/workload workload
  
  elif [[ "$1" == "release" ]]; then
-   roachprod stage local release $2 --os $os
+   roachprod stage local release $2 --os $os --arch $arch
  else
    echo "invalid args: kind $1; target $2"
    return 1
