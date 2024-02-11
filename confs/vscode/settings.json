@@ -15,7 +15,7 @@
 	"gitlens.hovers.enabled": false,
 	"files.autoSave": "afterDelay",
 	"editor.quickSuggestions": {
-			"other": false,
+	//		"other": false,
 			"comments": false,
 			"strings": false
 	},
@@ -27,7 +27,7 @@
     "build/builder_home/**": true,
     "pkg/mod/**": true
   },
-  "workbench.editor.enablePreview": false,
+  //"workbench.editor.enablePreview": false,
   "cSpell.userWords": [
     "backupccl",
     "bytea",
@@ -97,14 +97,14 @@
   "gopls": {
     // If true, enable additional analyses with staticcheck.
     // Warning: This will significantly increase memory usage.
-    "staticcheck": false,
+    "staticcheck": true,
   },
   "go.formatTool": "goimports",
   "editor.largeFileOptimizations": false,
   "json.maxItemsComputed": 50000,
   "terminal.integrated.scrollback": 100000,
   "diffEditor.renderSideBySide": false,
-  "extensions.ignoreRecommendations": true,
+  //"extensions.ignoreRecommendations": true,
   "githubPullRequests.remotes": [
     "upstream"
   ],
