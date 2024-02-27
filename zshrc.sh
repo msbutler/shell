@@ -74,3 +74,6 @@ done
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

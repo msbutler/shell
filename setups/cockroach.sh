@@ -23,6 +23,8 @@ export ALWAYS_RUN_GAZELLE=1
 # deals with a strange mac bug for crdb
 export MACOSX_DEPLOYMENT_TARGET=12.0
 
+export COCKROACH_ROOT=$GOPATH/src/github.com/cockroachdb/cockroach
+
 
 if [[ -d "${GOPATH}/src/github.com/cockroachlabs/managed-service" ]]; then
   export PATH=${PATH}:${GOPATH}/src/github.com/cockroachlabs/managed-service/bin

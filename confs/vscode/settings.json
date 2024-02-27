@@ -97,7 +97,7 @@
   "gopls": {
     // If true, enable additional analyses with staticcheck.
     // Warning: This will significantly increase memory usage.
-    "staticcheck": true,
+ //   "staticcheck": true,
   },
   "go.formatTool": "goimports",
   "editor.largeFileOptimizations": false,
@@ -120,4 +120,13 @@
       "source.organizeImports": "explicit"
     }
   },
+  "workbench.editor.editorActionsLocation": "hidden",
+	"filewatcher.commands": [
+			{
+					"match": "\\.go*",
+					"isAsync": true,
+					"cmd": "$COCKROACH_ROOT/bin/crlfmt -w -tab=2 ${file}",
+					"event": "onFileChange"
+			}       
+	]
 }

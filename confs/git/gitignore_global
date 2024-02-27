@@ -1,3 +1,6 @@
+# bazel test artifacts
+test_artifacts
+
 # Compiled source #
 ###################
 *.com$
