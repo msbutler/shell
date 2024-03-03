@@ -121,12 +121,13 @@
     }
   },
   "workbench.editor.editorActionsLocation": "hidden",
-	"filewatcher.commands": [
-			{
-					"match": "\\.go*",
-					"isAsync": true,
-					"cmd": "$COCKROACH_ROOT/bin/crlfmt -w -tab=2 ${file}",
-					"event": "onFileChange"
-			}       
-	]
+  "python.defaultInterpreterPath": "/Users/butler/.venv",
+//	"filewatcher.commands": [
+//			{
+//					"match": "\\.go*",
+//					"isAsync": true,
+//					"cmd": "$COCKROACH_ROOT/bin/crlfmt -w -tab=2 ${file}",
+//					"event": "onFileChange"
+//			}       
+//	]
 }
