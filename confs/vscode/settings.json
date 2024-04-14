@@ -82,7 +82,8 @@
     "Warningf",
     "Wrapf"
   ],
-  "git.autorefresh": false,
+  // Ensures the right branch appears in the vscode editor.
+  "git.autorefresh": true,
   "files.eol": "\n",
   "files.watcherExclude": {
     "vendor/**": true
@@ -122,6 +123,14 @@
   },
   "workbench.editor.editorActionsLocation": "hidden",
   "python.defaultInterpreterPath": "/Users/butler/.venv",
+  
+  // Might want to delete. Keep experimenting with merge in vscode
+  "diffEditor.codeLens": true,
+
+  // To speed up vim in vscode
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
 //	"filewatcher.commands": [
 //			{
 //					"match": "\\.go*",
