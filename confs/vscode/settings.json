@@ -98,7 +98,7 @@
   "gopls": {
     // If true, enable additional analyses with staticcheck.
     // Warning: This will significantly increase memory usage.
-//    "staticcheck": true,
+		"ui.semanticTokens": true
   },
   "go.formatTool": "goimports",
   "editor.largeFileOptimizations": false,
