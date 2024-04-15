@@ -55,5 +55,15 @@
         "key": "cmd+f12",
         "command": "-editor.action.goToImplementation",
         "when": "editorHasImplementationProvider && editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+k",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
     }
 ]
