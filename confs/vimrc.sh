@@ -39,6 +39,9 @@ noremap rr dd
 " exit insert mode more easily
 inoremap jk <esc>
 
+" exit visual mode more easily
+xnoremap <C-c> <esc>
+
 " Delete current line without yanking the line breaks
 nnoremap dil ^d$
 
