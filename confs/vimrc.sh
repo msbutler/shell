@@ -40,7 +40,7 @@ noremap rr dd
 inoremap jk <esc>
 
 " exit visual mode more easily
-xnoremap <C-c> <esc>
+xnoremap <esc> <C-c>
 
 " Delete current line without yanking the line breaks
 nnoremap dil ^d$
