@@ -3,7 +3,6 @@ set colorcolumn=80
 
 " line numbers
 set number
-set relativenumber
 
 " set status bar
 set laststatus=2
