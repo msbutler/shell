@@ -12,8 +12,7 @@
 	"editor.cursorBlinking": "solid",
 	"gitlens.currentLine.enabled": false,
 	"gitlens.hovers.currentLine.over": "line",
-	"gitlens.hovers.enabled": false,
-	"files.autoSave": "onWindowChange",
+  "gitlens.hovers.enabled": false,
 	"editor.quickSuggestions": {
 	//		"other": false,
 			"comments": false,
@@ -141,5 +140,5 @@
 					"cmd": "$COCKROACH_ROOT/bin/crlfmt -w -tab=2 ${file}",
 					"event": "onFileChange"
 			}       
-	]
+  ]
 }
