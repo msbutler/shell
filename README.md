@@ -5,7 +5,7 @@ A poor man's https://github.com/dt/shell
 
 Other parts of setup to note:
 - use iterm2
-- in iterm, use configure infinite scrollback
+- in iterm, configure infinite scrollback, and natural text editor
 - in non-insert mode, change the iterm font color to black to make the
   highlighted characters clearer.
 
