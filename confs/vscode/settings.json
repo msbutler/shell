@@ -13,6 +13,7 @@
 	"gitlens.currentLine.enabled": false,
 	"gitlens.hovers.currentLine.over": "line",
   "gitlens.hovers.enabled": false,
+	"files.autoSave": "onWindowChange",
 	"editor.quickSuggestions": {
 	//		"other": false,
 			"comments": false,
