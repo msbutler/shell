@@ -64,7 +64,11 @@ arch="amd64"
  elif [[ "$1" == "release" ]]; then
    roachprod stage local release $2 --os $os --arch $arch
  else
-   echo "invalid args: kind $1; target $2"
+   # last ditch effort. works for bleeding edge of old releases (e.g. release-24.1)
+	 roachprod stage local $1 --os linux --arch $arch
+   roachprod stage local workload --os linux --arch $arch
+   mv ~/local/1/workload workload
+
    return 1
  fi 
 
