@@ -137,12 +137,4 @@
   "gitlens.hovers.avatars": false,
   "editor.hover.delay": 0,
   "files.autoSave": "onWindowChange",
-	//"filewatcher.commands": [
-	//		{
-	//				"match": "\\.go*",
-	//				"isAsync": true,
-	//				"cmd": "$COCKROACH_ROOT/bin/crlfmt -w -tab=2 ${file}",
-	//				"event": "onFileChange"
-	//		}       
-  //]
 }
