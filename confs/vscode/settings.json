@@ -99,7 +99,10 @@
     // Warning: This will significantly increase memory usage.
 		"ui.semanticTokens": true
   },
-  "go.formatTool": "goimports",
+	"go.formatTool": "custom",
+	"go.alternateTools": {
+        "customFormatter": "/Users/butler/go/src/github.com/cockroachdb/cockroach/bin/crlfmt"
+    },
   "editor.largeFileOptimizations": false,
   "json.maxItemsComputed": 50000,
   "terminal.integrated.scrollback": 100000,
