@@ -4,6 +4,9 @@ set colorcolumn=80
 " line numbers
 set number
 
+" turn off the bell sound
+set belloff=all
+
 " set status bar
 set laststatus=2
 
