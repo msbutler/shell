@@ -61,6 +61,12 @@ set noexpandtab
 set tabstop=2
 set shiftwidth=2
 
+" timeout of commands (prevents esc from taking so long)
+set timeout
+set ttimeout
+set timeoutlen=1000 " Set to a reasonable value like 1000 milliseconds
+set ttimeoutlen=10 " Set to a lower value like 10 milliseconds
+
 " Use a line cursor within insert mode and a block cursor everywhere else.
 "
 " Reference chart of values:
