@@ -90,6 +90,9 @@ function gdd(){
 
 
 # git bisect helper
+# note the bash script could just contain a `./dev test blah`
+# note2: if several commits merge as one (i.e. bors) check the surrounding commits
+# that bisect finds.
 function gbi(){
  # gbi(bad_sha,good_sha,bash_script)
  chmod +x $3
