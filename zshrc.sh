@@ -43,15 +43,16 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # install all of these except autojump via cloning into oh my zsh repo
-# sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-plugins=(git vi-mode autojump zsh-history-substring-search  
+# sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlightingA
+# removed vi-mode
+plugins=(git autojump zsh-history-substring-search  
 zsh-autosuggestions zsh-syntax-highlighting)
 
-# Enter vi mode on cli with ctrl j
-bindkey -M viins 'jk' vi-cmd-mode
+# Enter vi mode on cli with ctrl j (disabled)
+# bindkey -M viins 'jk' vi-cmd-mode
 
-# Ensure insert mode is a cursor
-VI_MODE_SET_CURSOR=true
+# Ensure insert mode is a cursor (disabled)
+# VI_MODE_SET_CURSOR=true
 
 # Set threshold to 20seconds
 # Auto notify no longer enabled
