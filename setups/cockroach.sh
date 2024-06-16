@@ -25,6 +25,9 @@ export MACOSX_DEPLOYMENT_TARGET=12.0
 
 export COCKROACH_ROOT=$GOPATH/src/github.com/cockroachdb/cockroach
 
+if [[ -d "${GOPATH}/src/github.com/cockroachdb/cockroach/scripts" ]]; then
+  export PATH=${PATH}:${GOPATH}/src/github.com/cockroachdb/cockroach/scripts
+fi
 
 if [[ -d "${GOPATH}/src/github.com/cockroachlabs/managed-service" ]]; then
   export PATH=${PATH}:${GOPATH}/src/github.com/cockroachlabs/managed-service/bin
