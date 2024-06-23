@@ -50,6 +50,8 @@ zsh-autosuggestions zsh-syntax-highlighting)
 # Enter vi mode on cli with ctrl j
 bindkey -M viins 'jk' vi-cmd-mode
 
+# Fo vi cli, no other key mappings are present! careful!
+
 # Ensure insert mode is a cursor
 VI_MODE_SET_CURSOR=true
 
