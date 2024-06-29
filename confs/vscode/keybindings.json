@@ -33,6 +33,16 @@
         "command": "workbench.action.navigateForward",
         "when": "canNavigateForward"
     },
+		{
+				"key": "cmd+[",
+				"command": "-editor.action.outdentLines",
+				"when": "editorTextFocus"
+		},
+		{
+			"key": "cmd+]",
+			"command": "-editor.action.indentLines",
+			"when": "editorTextFocus"
+		},
     {
         "key": "ctrl+shift+-",
         "command": "-workbench.action.navigateForward",
