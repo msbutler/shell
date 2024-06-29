@@ -17,8 +17,7 @@
 	//		"other": false,
 			"comments": false,
 			"strings": false
-	},
-  "editor.detectIndentation": true,
+  },
   "editor.tabSize": 2,
   "files.exclude": {
     "**/*~": true,
@@ -117,7 +116,7 @@
   "[go]": {
   
     "editor.inlineSuggest.enabled": true,
-    "editor.insertSpaces": false,
+    "editor.insertSpaces": true,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
