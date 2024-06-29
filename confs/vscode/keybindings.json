@@ -33,16 +33,6 @@
         "command": "workbench.action.navigateForward",
         "when": "canNavigateForward"
     },
-		{
-				"key": "cmd+[",
-				"command": "-editor.action.outdentLines",
-				"when": "editorTextFocus"
-		},
-		{
-			"key": "cmd+]",
-			"command": "-editor.action.indentLines",
-			"when": "editorTextFocus"
-		},
     {
         "key": "ctrl+shift+-",
         "command": "-workbench.action.navigateForward",
@@ -84,5 +74,25 @@
         "key": "shift+cmd+b",
         "command": "editor.action.goToTypeDefinition",
         "when": "editorHasTypeDefinitionProvider"
+    },
+    {
+        "key": "shift+. shift+.",
+        "command": "editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+]",
+        "command": "-editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+, shift+,",
+        "command": "editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+[",
+        "command": "-editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
     }
 ]
