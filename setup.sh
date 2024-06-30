@@ -8,6 +8,8 @@ ln -sf ~/.shell/zshrc.sh ~/.zshrc
 ln -sf ~/.shell/confs/vimrc.sh ~/.vimrc
 ln -sf ~/.shell/confs/ideavimrc.sh ~/.ideavimrc
 
+ln -sf ~/.shell/confs/tmux.sh ~/.tmux.conf
+
 ln -sf ~/.shell/confs/git/gitconfig ~/.gitconfig
 ln -sf ~/.shell/confs/git/gitignore_global ~/.gitignore_global
 
