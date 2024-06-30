@@ -9,6 +9,7 @@ Other parts of setup to note:
   (more natural for vim).
 - in non-insert mode, change the iterm font color to black to make the
   highlighted characters clearer.
+- in os, map caps lock to esc for easier return to normal mode
 
 Good Tools to Install
 - ag:  quick file search
