@@ -98,10 +98,12 @@
     // Warning: This will significantly increase memory usage.
 		"ui.semanticTokens": true
   },
-	"go.formatTool": "custom",
-	"go.alternateTools": {
-        "customFormatter": "/Users/butler/go/src/github.com/cockroachdb/cockroach/bin/crlfmt"
-    },
+
+  // occasionally hangs. debug
+	//"go.formatTool": "custom",
+	//"go.alternateTools": {
+    //    "customFormatter": "/Users/butler/go/src/github.com/cockroachdb/cockroach/bin/crlfmt"
+    //},
   "editor.largeFileOptimizations": false,
   "json.maxItemsComputed": 50000,
   "terminal.integrated.scrollback": 100000,
@@ -117,7 +119,8 @@
   
     "editor.inlineSuggest.enabled": true,
     "editor.insertSpaces": true,
-    "editor.formatOnSave": true,
+    // occasionally hangs
+    //"editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
     }
