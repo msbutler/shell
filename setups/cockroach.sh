@@ -68,8 +68,8 @@ arch="amd64"
    roachprod stage local release $2 --os $os --arch $arch
  else
    # last ditch effort. works for bleeding edge of old releases (e.g. release-24.1)
-	 roachprod stage local $1 --os linux --arch $arch
-   roachprod stage local workload --os linux --arch $arch
+	 roachprod stage local $1 --os $os --arch $arch
+   roachprod stage local workload --os $os --arch $arch
    mv ~/local/1/workload workload
 
    return 1
