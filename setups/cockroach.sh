@@ -45,27 +45,32 @@ function cla() {
 # also gets pulled.
 # 
 # binaries master; binaries sha [sha]; binaries release [release]
+#
+# examples:
+#  on linux: binaries release v24.1.1
+#  on mac with m1: binaries v24.1.1 darwin
 function binaries() {
  roachprod destroy local 
  roachprod create -n 1 local
  
- os="linux"
+os="linux"
 arch="amd64"
- if [[ "$3" == "darwin" ]]; then
-   os="darwin"
- fi
+if [[ "$3" == "darwin" ]]; then
+  os="darwin"
+  arch="arm64"
+fi
  
  if [[ "$1" == "master" ]]; then
-   roachprod stage local cockroach --os linux --arch $arch
-   roachprod stage local workload --os linux --arch $arch
+   roachprod stage local cockroach --os $os --arch $arch
+   roachprod stage local workload --os $os --arch $arch
    mv ~/local/1/workload workload
  elif [[ "$1" == "sha" ]]; then
    roachprod stage local cockroach $2 --os $os --arch $arch
-   roachprod stage local workload $2 --os $os --arch $arch
    mv ~/local/1/workload workload
  
  elif [[ "$1" == "release" ]]; then
    roachprod stage local release $2 --os $os --arch $arch
+   mv ~/local/1/workload workload
  else
    # last ditch effort. works for bleeding edge of old releases (e.g. release-24.1)
 	 roachprod stage local $1 --os $os --arch $arch
