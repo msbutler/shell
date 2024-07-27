@@ -50,6 +50,7 @@ function cla() {
 # 
 # binaries master; binaries sha [sha]; binaries release [release]
 #
+# as of july 27 2023, workload mac binaries cannot be grabbed
 # examples:
 #  on linux: binaries release v24.1.1
 #  on mac with m1: binaries v24.1.1 darwin

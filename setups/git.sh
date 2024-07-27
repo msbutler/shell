@@ -87,12 +87,14 @@ function gdd(){
   fi
 }
 
-
-
 # git bisect helper
 # note the bash script could just contain a `./dev test blah`
 # note2: if several commits merge as one (i.e. bors) check the surrounding commits
 # that bisect finds.
+#
+# because of bors nonlinear history, you gotta search around the commit that
+# this returns.
+#
 function gbi(){
  # gbi(bad_sha,good_sha,bash_script)
  chmod +x $3
@@ -102,4 +104,15 @@ function gbi(){
  git bisect run ./$3
  git bisect log
  git bisect reset
+}
+
+# git rebase helper
+function grb(){
+ # grb release-24.1 will rebase on release-24.1. grb will rebase on master
+ branch="master" 
+ if [ -n "$1"]; then
+  $branch=$1
+  fi
+ git fetch origin/$branch
+ git rebase origin/$branch
 }
