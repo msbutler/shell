@@ -33,6 +33,10 @@ if [[ -d "${GOPATH}/src/github.com/cockroachlabs/managed-service" ]]; then
   export PATH=${PATH}:${GOPATH}/src/github.com/cockroachlabs/managed-service/bin
 fi
 
+function fork() {
+  # create new cockroach fork e.g. fork 24_2
+  git clone git@github.com:cockroachdb/cockroach.git $1
+}
 
 function cla() {
   curl -H "Authorization: token $GITHUB_TOKEN" \
