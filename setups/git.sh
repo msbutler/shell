@@ -1,6 +1,7 @@
 #git
 unalias gbs
 unalias gbd
+unalias grb
 alias g="git"
 
 # quickly add working tree to previous commit
@@ -109,10 +110,12 @@ function gbi(){
 # git rebase helper
 function grb(){
  # grb release-24.1 will rebase on release-24.1. grb will rebase on master
+ 
  branch="master" 
- if [ -n "$1"]; then
-  $branch=$1
+ if [ -n "$1" ]; then
+  branch="$1"
   fi
- git fetch origin/$branch
- git rebase origin/$branch
+ git fetch origin "$branch"
+ git rebase origin/"$branch"
+ git log -5 --format="%cd %s" --date=format:"%Y-%m-%d %H:%M:%S"
 }
