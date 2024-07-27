@@ -1,5 +1,5 @@
-if [[ -d "${GOPATH}/src/github.com/cockroachdb/cockroach/bin" ]]; then
-  export PATH=${PATH}:${GOPATH}/src/github.com/cockroachdb/cockroach/bin
+if [[ -d "${GOPATH}/src/github.com/cockroachdb/master/bin" ]]; then
+  export PATH=${PATH}:${GOPATH}/src/github.com/cockroachdb/master/bin
 fi
 
 if [ -f ~/.cockroach.lic ]; then
@@ -23,15 +23,16 @@ export ALWAYS_RUN_GAZELLE=1
 # deals with a strange mac bug for crdb
 export MACOSX_DEPLOYMENT_TARGET=12.0
 
-export COCKROACH_ROOT=$GOPATH/src/github.com/cockroachdb/cockroach
+export COCKROACH_ROOT=$GOPATH/src/github.com/cockroachdb/master
 
-if [[ -d "${GOPATH}/src/github.com/cockroachdb/cockroach/scripts" ]]; then
-  export PATH=${PATH}:${GOPATH}/src/github.com/cockroachdb/cockroach/scripts
+if [[ -d "${GOPATH}/src/github.com/cockroachdb/master/scripts" ]]; then
+  export PATH=${PATH}:${GOPATH}/src/github.com/cockroachdb/master/scripts
 fi
 
 if [[ -d "${GOPATH}/src/github.com/cockroachlabs/managed-service" ]]; then
   export PATH=${PATH}:${GOPATH}/src/github.com/cockroachlabs/managed-service/bin
 fi
+
 
 function fork() {
   # create new cockroach fork e.g. fork 24_2
