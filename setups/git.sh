@@ -5,7 +5,8 @@ unalias grb
 alias g="git"
 
 # quickly add working tree to previous commit
-alias gam="git add .; git commit --amend --no-edit"
+alias gam_nofmt="git add .; git commit --amend --no-edit"
+alias gam="mbfmt; gam_nofmt"
 
 # add, commit, and push current branch to butler remote
 alias gp="gam; git push -u butler HEAD"
@@ -118,4 +119,14 @@ function grb(){
  git fetch origin "$branch"
  git rebase origin/"$branch"
  git log -5 --format="%cd %s" --date=format:"%Y-%m-%d %H:%M:%S"
+}
+
+# get most recent commit not authored by Michael Butler
+function gnotmb(){
+  git log --perl-regexp --author='^((?!Michael Butler).*)$' -n 1 --format="%H"
+}
+
+# get commit right after passed in commit
+function gnext(){
+  git log --reverse --ancestry-path $1..HEAD  --format="%H" | head -n 1
 }
