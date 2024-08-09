@@ -94,5 +94,9 @@
         "key": "cmd+[",
         "command": "-editor.action.outdentLines",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+cmd+o",
+        "command": "gitlens.openCommitOnRemote"
     }
 ]
