@@ -2,6 +2,10 @@ if [[ -d "${GOPATH}/src/github.com/cockroachdb/master/bin" ]]; then
   export PATH=${PATH}:${GOPATH}/src/github.com/cockroachdb/master/bin
 fi
 
+if [[ -d "${GOPATH}/src/github.com/cockroachdb/master" ]]; then
+  export PATH=${PATH}:${GOPATH}/src/github.com/cockroachdb/master
+fi
+
 if [ -f ~/.cockroach.lic ]; then
   export COCKROACH_DEV_LICENSE="$(cat ~/.cockroach.lic)"
 fi
