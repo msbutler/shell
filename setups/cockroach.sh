@@ -96,6 +96,12 @@ fi
  pwd
 }
 
+# nightly takes one arg: a sha associated with a nightly test run.
+# to find a sha, go to the nightly build log, and grep for "computed"
+function nightly() {
+  roachprod stageurl cockroach --arch arm64 --os linux $1
+}
+
 # runs crlfmt on the diff in the latest commit
 function mbfmt() {                                                              
     echo crlfmt                                                              
