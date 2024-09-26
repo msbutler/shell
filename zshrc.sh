@@ -33,7 +33,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
    bindkey '^[[A' history-substring-search-up
 else
    # for gce worker
-   export ZSH="/home/butler/.oh-my-zsh"                                          
+   export ZSH="~/.oh-my-zsh"                                          
  
   [[ -s /home/butler/.autojump/etc/profile.d/autojump.sh ]] && source /home/butler/.autojump/etc/profile.d/autojump.sh
 
