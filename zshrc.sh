@@ -18,9 +18,9 @@ fi
 source ~/.shell/py.sh
 source ~/.shell/go.sh
 
+export ZSH="~/.oh-my-zsh"
+
 if [[ "$(uname)" == "Darwin" ]]; then
-   
-   export ZSH="/Users/butler/.oh-my-zsh"                                          
    
    # a couple helpers on my mac that haven't gotten checked in yet
    # source ~/bin/helpers.sh
@@ -33,9 +33,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
    bindkey '^[[A' history-substring-search-up
 else
    # for gce worker
-   export ZSH="~/.oh-my-zsh"                                          
  
-  [[ -s /home/butler/.autojump/etc/profile.d/autojump.sh ]] && source /home/butler/.autojump/etc/profile.d/autojump.sh
+  [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 
 	autoload -U compinit && compinit -u
 fi        
