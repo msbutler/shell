@@ -12,4 +12,4 @@ Other parts of setup to note:
 - in os, map caps lock to esc for easier return to normal mode
 
 Good Tools to Install
-- ag:  quick file search
+- ripgrep
