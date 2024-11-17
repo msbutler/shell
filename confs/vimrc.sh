@@ -39,10 +39,10 @@ noremap r d
 noremap rr dd
 
 " Remap - to go to the end of the line in normal mode (nice bc _ goes to beg)
-nnoremap - $
+nnoremap - g_
 
 " Remap - to go to the end of the line in visual mode
-vnoremap - $
+vnoremap - g_
 
 " exit insert and visual mode more easily
 inoremap jk <esc>
