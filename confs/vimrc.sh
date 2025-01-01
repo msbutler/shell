@@ -46,6 +46,7 @@ vnoremap - g_
 
 " exit insert and visual mode more easily
 inoremap jk <esc>
+vnoremap jk <esc>
 
 " Delete current line without yanking the line breaks
 nnoremap dil ^d$
