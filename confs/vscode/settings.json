@@ -139,4 +139,5 @@
   "gitlens.hovers.avatars": false,
   "editor.hover.delay": 0,
   "files.autoSave": "onWindowChange",
+  "update.mode": "manual",
 }
