@@ -22,6 +22,7 @@
   "files.exclude": {
     "**/*~": true,
     "bazel-*/": true,
+    "_bazel*/": true,
     "build/builder_home/**": true,
     "pkg/mod/**": true
   },
@@ -90,7 +91,9 @@
     "c-deps/**": true,
     "pkg/ui/yarn**": true,
     "vendor/**": true,
-    "pkg/mod/**": true
+    "pkg/mod/**": true,
+		"_bazel*/": true,
+		"**/*.log": true
   },
   "go.useLanguageServer": true,
   "gopls": {
