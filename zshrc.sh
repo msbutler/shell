@@ -82,3 +82,6 @@ export PATH="$PATH:$HOME/Applications/Visual Studio Code.app/Contents/Resources/
 
 # Set vscode as default editor
 export EDITOR="code -w"
+
+# Add Node Path
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
