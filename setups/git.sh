@@ -48,9 +48,12 @@ function gbs() {
 
 # force sync local branch to remote (git reset remote)
 function grr(){
+  local remote
+  local branch
   branch=$(git rev-parse --abbrev-ref HEAD)
-  
-  if [[ "$(uname)" == "Darwin" ]]; then
+  remote=$(git config branch.$(git rev-parse --abbrev-ref HEAD).remote)  
+
+  if [[ "$(uname)" == "Darwin" && "$remote" == "butler" ]]; then
 echo "\n On mac. Really want to force pull? If so, press y"
    read ans
    if [[ $ans != "y" ]]; then
@@ -59,10 +62,10 @@ echo "\n On mac. Really want to force pull? If so, press y"
   fi
 
   # TODO: consider making a backup of the local branch
-  git fetch butler
+  git fetch $remote $branch
 
   # First reset branch so all commits match remote
-  git reset --hard @{u}
+  git reset --hard "$remote/$branch"
   
   # Then get rid of untracked stuff
   gdd
@@ -129,4 +132,10 @@ function gnotmb(){
 # get commit right after passed in commit
 function gnext(){
   git log --reverse --ancestry-path $1..HEAD  --format="%H" | head -n 1
+}
+
+# fetch branch from remote and switch to it
+function gfs() {
+  git fetch $1 $2
+  git switch $2
 }
