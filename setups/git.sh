@@ -29,6 +29,14 @@ function gpe() {
   g switch $branch
 }
 
+# delete merged branches on master
+function gdm() {
+  git switch master
+  grb
+  git branch --merged | grep -Ev "master" | xargs git branch -d
+  git switch -
+}
+
 # delete branches that regex match
 function gbd() {
   gbv $1
