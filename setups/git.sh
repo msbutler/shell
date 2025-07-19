@@ -37,8 +37,14 @@ function gdm() {
   git switch -
 }
 
-# delete branches that regex match
+# delete branches that regex match, and old and merged stuff.
 function gbd() {
+  gdm
+  gdo
+  if [ -z "$1" ]; then
+    echo "No regex argument provided."
+    return
+  fi
   gbv $1
   echo "Press y to delete these branches"
   read ans
@@ -146,4 +152,52 @@ function gnext(){
 function gfs() {
   git fetch $1 $2
   git switch $2
+}
+
+# delete branches that have not been touched in 6 months
+function gdo() {
+  local threshold_days=180  # 6 months ≈ 180 days
+  local current_branch
+  local filter="${1:-}"  # optional pattern to narrow the branch list
+  local stale_branches=()
+
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+  while IFS= read -r line; do
+    branch_date=$(echo "$line" | awk '{print $1}')
+    branch_name=$(echo "$line" | cut -d' ' -f2-)
+
+    # Skip current branch
+    if [[ "$branch_name" == "$current_branch" ]]; then
+      continue
+    fi
+
+    # Convert dates to seconds since epoch
+    branch_seconds=$(date -j -f "%Y-%m-%d" "$branch_date" "+%s" 2>/dev/null || date -d "$branch_date" "+%s")
+    now_seconds=$(date "+%s")
+
+    age_days=$(( (now_seconds - branch_seconds) / 86400 ))
+
+    if (( age_days >= threshold_days )); then
+      stale_branches+=("$branch_name")
+    fi
+  done < <(gbv "$filter")
+
+  if [[ ${#stale_branches[@]} -eq 0 ]]; then
+    echo "✅ No branches older than 6 months found matching '${filter}'."
+    return
+  fi
+
+  echo "🗑️ The following branches are older than 6 months and will be deleted:"
+  printf '  - %s\n' "${stale_branches[@]}"
+
+  echo -e "\nPress y to confirm deletion:"
+  read -r ans
+  if [[ "$ans" == "y" ]]; then
+    for branch in "${stale_branches[@]}"; do
+      git branch -D "$branch"
+    done
+  else
+    echo "❎ Aborted. No branches were deleted."
+  fi
 }
