@@ -16,6 +16,10 @@ fi
 
 # gceworker
 export GCEWORKER_NAME=gceworker-butler
+if [[ "$(uname)" == "Linux" ]]; then
+  export PATH=$PATH:/home/butler_cockroachlabs_com
+  export CLOUDSDK_PYTHON=/usr/bin/python3.9
+fi
 
 # roachprod
 export CLUSTER=butler-test
