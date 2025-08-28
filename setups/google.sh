@@ -1,5 +1,10 @@
 #gloud sdk config
 export CLOUDSDK_PYTHON=python3
+if [[ "$(uname)" == "Linux" ]]; then
+  export CLOUDSDK_PYTHON=python3.9
+fi
+
+
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -d '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
