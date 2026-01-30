@@ -108,7 +108,7 @@ function nightly() {
 # runs crlfmt on the diff in the latest commit
 function mbfmt() {                                                              
     echo crlfmt                                                              
-    git diff-tree --no-commit-id --name-only -r HEAD | grep '.go' | xargs -n1 crlfmt  -tab 2 -w
+    git diff-tree --no-commit-id --name-only -r HEAD | grep '.go' | grep -v '_generated.go' | xargs -n1 crlfmt  -tab 2 -w
   }
 
 function user() {
