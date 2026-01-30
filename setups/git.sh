@@ -150,8 +150,11 @@ function gnext(){
 
 # fetch branch from remote and switch to it
 function gfs() {
-  git fetch $1 $2
-  git switch $2
+	local raw_branch="$2"
+  local branch="${raw_branch#*:}"
+
+  git fetch "$1" "$branch"
+  git switch "$branch"
 }
 
 # delete branches that have not been touched in 6 months
