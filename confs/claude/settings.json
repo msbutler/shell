@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(head:*)",
+      "Bash(done)",
+      "Bash(grep:*)",
+      "Bash(git log:*)",
+      "Bash(gh issue list:*)",
+      "Bash(cat:*)",
+      "Bash(tail:*)",
+      "Read(*)",
+      "WebFetch(domain:github.com)",
+      "mcp__gopls-mcp__go_search",
+      "Bash(crlfmt:*)"
+    ],
+    "deny": []
+  }
+}

@@ -13,6 +13,8 @@ ln -sf ~/.shell/confs/tmux.sh ~/.tmux.conf
 ln -sf ~/.shell/confs/git/gitconfig ~/.gitconfig
 ln -sf ~/.shell/confs/git/gitignore_global ~/.gitignore_global
 
+ln -sf ~/.shell/confs/claude/settings.json ~/.claude/settings.json
+
 ln -sf ~/.shell/confs/cursorignore ~/.cursorignore
 
 mkdir -p ~/Library/Application\ Support/Code/User
