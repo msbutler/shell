@@ -96,6 +96,7 @@
 		"**/*.log": true
   },
   "go.useLanguageServer": true,
+  "go.diagnostic.vulncheck": "Off",
   "gopls": {
     // If true, enable additional analyses with staticcheck.
     // Warning: This will significantly increase memory usage.
