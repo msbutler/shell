@@ -42,4 +42,6 @@ Thumbs.db
 # temp vim file
 *.swp
 
-.claude
+# local configuration files in .claude directory
+.claude/**/*.local.*
+
