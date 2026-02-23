@@ -15,8 +15,12 @@
       "Read(*)",
       "WebFetch(domain:github.com)",
       "mcp__gopls-mcp__go_search",
-      "Bash(crlfmt:*)"
+      "Bash(crlfmt:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(git:*)"
     ],
     "deny": []
-  }
+  },
+  "model": "claude-opus-4-6"
 }
