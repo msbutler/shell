@@ -18,7 +18,8 @@
       "Bash(crlfmt:*)",
       "Bash(sed:*)",
       "Bash(awk:*)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(gh api:*)"
     ],
     "deny": []
   },
