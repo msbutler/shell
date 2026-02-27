@@ -19,7 +19,8 @@
       "Bash(sed:*)",
       "Bash(awk:*)",
       "Bash(git:*)",
-      "Bash(gh:*)"
+      "Bash(gh:*)",
+			"Bash(dev:*)"
     ],
     "deny": []
   },
