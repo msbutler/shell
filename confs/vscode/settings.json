@@ -24,7 +24,8 @@
     "**/bazel-*/": true,
     "**/_bazel*/": true,
     "build/builder_home/**": true,
-    "pkg/mod/**": true
+    "pkg/mod/**": true,
+    "artifacts/**": true
   },
   //"workbench.editor.enablePreview": false,
   "cSpell.userWords": [
@@ -143,5 +144,5 @@
   "gitlens.hovers.avatars": false,
   "editor.hover.delay": 0,
   "files.autoSave": "afterDelay",
-  "update.mode": "manual",
+  "update.mode": "manual"
 }
