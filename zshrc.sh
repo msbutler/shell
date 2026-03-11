@@ -80,8 +80,8 @@ export PATH=$PATH:$HOME/.pulumi/bin
 # Add Visual Studio Code (code)
 export PATH="$PATH:$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# Set vscode as default editor
-export EDITOR="code -w"
+# Set vim as default editor
+export EDITOR=vim
 
 # Add Node Path
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
