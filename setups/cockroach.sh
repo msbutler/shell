@@ -56,21 +56,24 @@ function cla() {
 # to the current directory. If master or sha is specified, the workload binary 
 # also gets pulled.
 # 
-# binaries master; binaries sha [sha]; binaries release [release]
+# binaries master [os] [arch]; binaries sha [sha] [os] [arch]; binaries release [release] [os] [arch]
 #
 # as of july 27 2023, workload mac binaries cannot be grabbed
 # examples:
 #  on linux: binaries release v24.1.1
-#  on mac with m1: binaries v24.1.1 darwin
+#  on linux arm64: binaries sha f306fb8 linux arm64
+#  on mac with m1: binaries release v24.1.1 darwin arm64
 function binaries() {
  roachprod destroy local 
  roachprod create -n 1 local
  
-os="linux"
-arch="amd64"
-if [[ "$3" == "darwin" ]]; then
-  os="darwin"
-  arch="arm64"
+os="${2:-linux}"
+arch="${3:-amd64}"
+
+# For subcommands that take an argument (sha, release), os and arch shift to $3/$4
+if [[ "$1" == "sha" || "$1" == "release" ]]; then
+  os="${3:-linux}"
+  arch="${4:-amd64}"
 fi
  
  if [[ "$1" == "master" ]]; then
