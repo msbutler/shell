@@ -41,6 +41,14 @@ if [[ -d "${GOPATH}/src/github.com/cockroachlabs/managed-service" ]]; then
 fi
 
 
+function rwc() {
+  if [ -z "$1" ]; then
+    echo "Usage: rwc <branch-name>"
+    return 1
+  fi
+  roachdev wt create "$1" --branch && cd "$HOME/.roachdev/worktrees/$1"
+}
+
 function fork() {
   # create new cockroach fork e.g. fork 24_2
   git clone git@github.com:cockroachdb/cockroach.git $1
