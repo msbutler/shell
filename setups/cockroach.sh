@@ -46,7 +46,7 @@ function rwc() {
     echo "Usage: rwc <branch-name>"
     return 1
   fi
-  roachdev wt create "$1" --branch && cd "$HOME/.roachdev/worktrees/$1"
+  roachdev wt create "$1" --branch && cd "$HOME/.roachdev/worktrees/$(basename "$PWD")-$1"
 }
 
 function fork() {
