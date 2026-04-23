@@ -117,9 +117,12 @@ function nightly() {
 }
 
 # runs crlfmt on the diff in the latest commit
-function mbfmt() {                                                              
-    echo crlfmt                                                              
-    git diff-tree --no-commit-id --name-only -r HEAD | grep '.go' | grep -v '_generated.go' | xargs -n1 crlfmt  -tab 2 -w
+function mbfmt() {
+    echo crlfmt
+    git diff-tree --no-commit-id --name-only -r HEAD \
+      | grep '\.go$' \
+      | grep -vE 'zcgo.*|\.pb(\.gw)?\.go|\.([eo]g)\.go|/testdata/|^sql/parser/sql\.go$|(_)?generated(_test)?\.go$|^sql/pgrepl/pgreplparser/pgrepl\.go$|^sql/plpgsql/parser/plpgsql\.go$|^util/jsonpath/parser/jsonpath\.go$' \
+      | xargs -n1 crlfmt -tab 2 -w
   }
 
 function user() {
