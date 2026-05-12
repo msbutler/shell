@@ -147,5 +147,8 @@
   "workbench.colorTheme": "Dark Modern",
   "git.openRepositoryInParentFolders": "never",
   "extensions.autoUpdate": false,
-  "git.optimisticUpdate": false
+  "git.optimisticUpdate": false,
+  "github.copilot.enable": {
+    "*": false
+  }
 }

@@ -2,5 +2,6 @@
   "model": "claude-opus-4-6",
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": false
-  }
+  },
+  "editorMode": "vim"
 }
