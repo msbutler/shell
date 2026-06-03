@@ -150,5 +150,10 @@
   "git.optimisticUpdate": false,
   "github.copilot.enable": {
     "*": false
-  }
+  },
+  "extensions.autoCheckUpdates": false,
+  "github.copilot.chat.updated53CodexPrompt.enabled": false,
+  "go.toolsManagement.checkForUpdates": "off",
+  "github.copilot.chat.claude47OpusPrompt.enabled": false,
+  "gitlens.fileAnnotations.preserveWhileEditing": false
 }
