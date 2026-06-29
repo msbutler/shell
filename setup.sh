@@ -22,6 +22,18 @@ mkdir -p ~/Library/Application\ Support/Code/User
 ln -sf ~/.shell/confs/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -sf ~/.shell/confs/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
+# --- Zsh Installation ---
+
+if ! command -v zsh > /dev/null 2>&1; then
+  if [ "$(uname)" = "Darwin" ]; then
+    echo "Installing zsh via brew..."
+    brew install zsh || echo "Warning: failed to install zsh"
+  else
+    echo "Installing zsh via apt-get..."
+    sudo apt-get install -y zsh || echo "Warning: failed to install zsh"
+  fi
+fi
+
 # --- Plugin Installation ---
 
 ZSH_DIR="$HOME/.oh-my-zsh"
