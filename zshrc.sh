@@ -43,8 +43,7 @@ fi
   
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# install all of these except autojump via cloning into oh my zsh repo
-# sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# Plugins are auto-installed by setup.sh
 plugins=(git vi-mode autojump zsh-history-substring-search  
 zsh-autosuggestions zsh-syntax-highlighting)
 
