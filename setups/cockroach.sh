@@ -1,3 +1,5 @@
+alias claude="roachdev claude --safe"
+
 if [[ -d "${GOPATH}/src/github.com/cockroachdb/master/bin" ]]; then
   export PATH=${PATH}:${GOPATH}/src/github.com/cockroachdb/master/bin
 fi
