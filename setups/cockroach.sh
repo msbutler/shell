@@ -16,6 +16,10 @@ if [ -f ~/.github_token ]; then
    export GITHUB_TOKEN="$(cat ~/.github_token)"                        
 fi  
 
+if [[ "$(uname)" == "Darwin" ]]; then
+  alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+fi
+
 # gceworker
 export GCEWORKER_NAME=gceworker-butler
 if [[ "$(uname)" == "Linux" ]]; then
