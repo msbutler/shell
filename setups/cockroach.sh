@@ -17,7 +17,7 @@ if [ -f ~/.github_token ]; then
 fi  
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+  alias tailscale="/Applications/Tailscale.localized/Tailscale.app/Contents/MacOS/Tailscale"
 fi
 
 # gceworker
