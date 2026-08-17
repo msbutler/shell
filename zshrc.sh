@@ -8,8 +8,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Check for updates to the shell scripts, but send stdout and stderr errors to dev/null
-if [[ -d ~/.shell/.git ]]; then
+# Check for updates to the shell scripts, but send stdout and stderr errors to dev/null.
+# Skip on Darwin (macOS): the git pull triggers an expensive ssh call on every new
+# shell/tab, which is too slow locally. Updates still run automatically on remote workers.
+if [[ "$(uname)" != "Darwin" && -d ~/.shell/.git ]]; then
    (( cd ~/.shell && git pull && ./setup.sh ) > /dev/null 2>/dev/null >/dev/null) || echo "cannot update ~/.shell automatically"
 fi
 
