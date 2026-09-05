@@ -143,7 +143,7 @@
   "gitlens.hovers.avatars": false,
   "editor.hover.delay": 0,
   "files.autoSave": "afterDelay",
-  "update.mode": "none",
+  "update.mode": "manual",
   "workbench.colorTheme": "Dark Modern",
   "git.openRepositoryInParentFolders": "never",
   "extensions.autoUpdate": "off",
