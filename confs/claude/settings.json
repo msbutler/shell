@@ -73,12 +73,16 @@
       "WebFetch(domain:json.schemastore.org)",
       "WebFetch(domain:cdn.jsdelivr.net)",
       "WebFetch(domain:unpkg.com)",
-      "WebFetch(domain:registry.yarnpkg.com)"
+      "WebFetch(domain:registry.yarnpkg.com)",
+      "Edit(/Users/butler/go/src/github.com/cockroachdb/**)"
     ],
     "ask": [
       "Bash(rm -rf:*)",
       "Bash(rm -fr:*)",
       "Bash(rm -r:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/butler/go/src/github.com/cockroachdb"
     ]
   },
   "sandbox": {
