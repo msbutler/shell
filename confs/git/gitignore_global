@@ -45,3 +45,5 @@ Thumbs.db
 # local configuration files in .claude directory
 .claude/**/*.local.*
 
+
+**/.claude/.cc-writes/

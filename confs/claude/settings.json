@@ -92,7 +92,8 @@
     "allowUnsandboxedCommands": false,
     "enableWeakerNetworkIsolation": true,
     "network": {
-      "allowedDomains": ["*"]
+      "allowedDomains": ["*"],
+      "allowLocalBinding": true
     },
     "filesystem": {
       "allowWrite": [
@@ -100,6 +101,11 @@
         "/private/tmp",
         "/var/folders",
         "/private/var/folders",
+        "/var/tmp/_bazel_butler",
+        "/private/var/tmp/_bazel_butler",
+        "~/.cache/bazel",
+        "~/.cache/bazelisk",
+        "~/Library/Caches/bazelisk",
         "~/.roachdev",
         "~/go",
         "~/.cache/go-build",
