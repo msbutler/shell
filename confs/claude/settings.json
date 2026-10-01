@@ -91,6 +91,7 @@
     "autoAllowBashIfSandboxed": true,
     "allowUnsandboxedCommands": false,
     "enableWeakerNetworkIsolation": true,
+    "excludedCommands": ["./dev *", "bazel *", "bazelisk *"],
     "network": {
       "allowedDomains": ["*"],
       "allowLocalBinding": true
