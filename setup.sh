@@ -39,6 +39,24 @@ fi
 ZSH_DIR="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$ZSH_DIR/custom"
 
+# The gitconfig rewrites https://github.com/ to ssh, so every clone below needs
+# a working GitHub ssh key. Check once, and only if something needs cloning, so
+# the automatic setup.sh run on each new shell doesn't pay for an ssh round trip.
+if [ ! -d "$ZSH_DIR" ] \
+  || [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ] \
+  || [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ] \
+  || [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ] \
+  || [ ! -d "$ZSH_CUSTOM/plugins/zsh-history-substring-search" ]; then
+  # GitHub's ssh endpoint exits 1 even on success, so match on its greeting.
+  if ! ssh -T -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=accept-new \
+      git@github.com 2>&1 | grep -q "successfully authenticated"; then
+    echo "Error: cannot authenticate to GitHub over ssh, so oh-my-zsh and plugins can't be cloned."
+    echo "Add an ssh key for this machine to https://github.com/settings/keys, check it with"
+    echo "'ssh -T git@github.com', then rerun ~/.shell/setup.sh."
+    exit 1
+  fi
+fi
+
 if [ ! -d "$ZSH_DIR" ]; then
   echo "Installing oh-my-zsh..."
   git clone https://github.com/ohmyzsh/ohmyzsh.git "$ZSH_DIR" || echo "Warning: failed to install oh-my-zsh"
