@@ -22,7 +22,7 @@ source ~/.shell/go.sh
 
 if [[ "$(uname)" == "Darwin" ]]; then
    
-   export ZSH="/Users/butler/.oh-my-zsh"                                          
+   export ZSH="$HOME/.oh-my-zsh"
    
    # a couple helpers on my mac that haven't gotten checked in yet
    # source ~/bin/helpers.sh
