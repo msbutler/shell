@@ -38,6 +38,7 @@ fi
 
 ZSH_DIR="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$ZSH_DIR/custom"
+NVIM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
 
 # The gitconfig rewrites https://github.com/ to ssh, so every clone below needs
 # a working GitHub ssh key. Check once, and only if something needs cloning, so
@@ -46,7 +47,8 @@ if [ ! -d "$ZSH_DIR" ] \
   || [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ] \
   || [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ] \
   || [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ] \
-  || [ ! -d "$ZSH_CUSTOM/plugins/zsh-history-substring-search" ]; then
+  || [ ! -d "$ZSH_CUSTOM/plugins/zsh-history-substring-search" ] \
+  || [ ! -e "$NVIM_DIR" ]; then
   # GitHub's ssh endpoint exits 1 even on success, so match on its greeting.
   if ! ssh -T -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=accept-new \
       git@github.com 2>&1 | grep -q "successfully authenticated"; then
@@ -86,6 +88,30 @@ if [ -d "$ZSH_DIR" ]; then
     git clone https://github.com/zsh-users/zsh-history-substring-search.git "$ZSH_CUSTOM/plugins/zsh-history-substring-search" \
       || echo "Warning: failed to install zsh-history-substring-search"
   fi
+fi
+
+# --- Neovim Config ---
+
+# Clone kickstart.nvim on first run; afterwards fast-forward it only when the
+# remote has new commits. A non-fast-forward (local commits or edits) is left
+# alone with a warning rather than clobbered.
+if [ ! -e "$NVIM_DIR" ]; then
+  echo "Installing nvim config..."
+  mkdir -p "$(dirname "$NVIM_DIR")"
+  git clone https://github.com/msbutler/kickstart.nvim.git "$NVIM_DIR" \
+    || echo "Warning: failed to install nvim config"
+elif [ -d "$NVIM_DIR/.git" ]; then
+  if git -C "$NVIM_DIR" fetch -q 2>/dev/null; then
+    if [ "$(git -C "$NVIM_DIR" rev-parse HEAD)" != "$(git -C "$NVIM_DIR" rev-parse @{u})" ]; then
+      echo "Updating nvim config..."
+      git -C "$NVIM_DIR" merge -q --ff-only @{u} 2>/dev/null \
+        || echo "Warning: $NVIM_DIR has diverged from its remote; update it by hand"
+    fi
+  else
+    echo "Warning: failed to fetch nvim config updates"
+  fi
+else
+  echo "Warning: $NVIM_DIR exists but isn't a git checkout; skipping nvim config"
 fi
 
 if ! command -v autojump > /dev/null 2>&1; then
