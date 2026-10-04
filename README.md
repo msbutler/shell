@@ -7,12 +7,13 @@ A poor man's https://github.com/dt/shell
 Install via [Homebrew](https://brew.sh):
 
 ```
-brew install neovim ripgrep fd
+brew install neovim ripgrep fd tree-sitter-cli
 brew install --cask iterm2 rectangle alfred
 ```
 
 - neovim: config is cloned from https://github.com/msbutler/kickstart.nvim by
-  setup.sh; ripgrep and fd back its Telescope search.
+  setup.sh; ripgrep and fd back its Telescope search;
+  tree-sitter-cli compiles its treesitter parsers.
 - iterm2: terminal.
 - rectangle: window snapping.
 - alfred: launcher.
