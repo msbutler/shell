@@ -1,5 +1,5 @@
 {
-  "model": "claude-opus-4-8",
+  "model": "claude-opus-5-5",
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": false,
     "superpowers@claude-plugins-official": true
