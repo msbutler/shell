@@ -6,6 +6,7 @@
   },
   "editorMode": "vim",
   "permissions": {
+    "defaultMode": "auto",
     "allow": [
       "Bash(awk:*)",
       "Bash(bazel:*)",
@@ -86,7 +87,7 @@
     ]
   },
   "sandbox": {
-    "enabled": true,
+    "enabled": false,
     "failIfUnavailable": true,
     "autoAllowBashIfSandboxed": true,
     "allowUnsandboxedCommands": false,
