@@ -15,6 +15,7 @@ ln -sf ~/.shell/confs/git/gitignore_global ~/.gitignore_global
 
 mkdir -p ~/.claude
 ln -sf ~/.shell/confs/claude/settings.json ~/.claude/settings.json
+ln -sf ~/.shell/confs/claude/CLAUDE.md ~/.claude/CLAUDE.md
 
 ln -sf ~/.shell/confs/cursorignore ~/.cursorignore
 
