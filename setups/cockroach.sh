@@ -150,4 +150,58 @@ function gce_clean() {
  cd .
  echo "After"
  du -h | sort -hr | head -10
-}   
+}
+
+# Delete the bazel output for every workspace except the ones given (default:
+# master) to reclaim disk. Workspaces are dir names under cockroachdb/ or paths.
+# Bazel's shared download cache and install dir are kept.
+#
+# bazel_prune                  keep master
+# bazel_prune master 26_2      keep master and 26_2
+# bazel_prune -n               dry run: only list what would be deleted
+function bazel_prune() {
+  setopt local_options null_glob
+  local dry_run=0
+  if [[ "$1" == "-n" ]]; then dry_run=1; shift; fi
+  (( $# )) || set -- master
+
+  local root="$HOME/.cache/bazel/_bazel_$USER"
+  [[ "$(uname)" == "Darwin" ]] && root="/private/var/tmp/_bazel_$USER"
+  [[ -d "$root" ]] || { echo "no bazel output root at $root"; return 1; }
+
+  local ws
+  local -a keep
+  for ws in "$@"; do
+    [[ -d "$ws" ]] || ws="$GOPATH/src/github.com/cockroachdb/$ws"
+    [[ -d "$ws" ]] || { echo "no such workspace: $ws"; return 1; }
+    keep+=("${ws:A}")
+  done
+
+  # Each output base's README names the workspace it was built from.
+  local d note
+  local -a doomed
+  for d in "$root"/*(/); do
+    [[ "${d:t}" == (install|cache) ]] && continue
+    ws="$(sed -n 's/^WORKSPACE: //p' "$d/README" 2>/dev/null)"
+    (( ${keep[(Ie)$ws]} )) && continue
+    doomed+=("$d")
+    note="${ws:-(no workspace)}"
+    [[ -n "$ws" && ! -d "$ws" ]] && note="$note (checkout deleted)"
+    printf '%6s  %s  %s\n' "$(du -sh "$d" 2>/dev/null | cut -f1)" "${d:t}" "$note"
+  done
+
+  (( ${#doomed} )) || { echo "nothing to delete"; return 0; }
+  (( dry_run )) && return 0
+  read -q "?Delete these ${#doomed} bazel output dirs? [y/N] " || { echo; return 1; }
+  echo
+
+  local pid
+  for d in "${doomed[@]}"; do
+    # Stop the bazel server so it isn't using files mid-delete.
+    pid="$(cat "$d/server/server.pid.txt" 2>/dev/null)"
+    [[ -n "$pid" ]] && kill "$pid" 2>/dev/null && sleep 1
+    # Bazel makes much of its output read-only, which stops a plain rm -rf.
+    chmod -R u+w "$d" && rm -rf "$d" && echo "deleted ${d:t}"
+  done
+  df -h "$root" | tail -1 | awk '{print $4 " free"}'
+}
