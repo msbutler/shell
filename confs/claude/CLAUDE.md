@@ -31,6 +31,18 @@ After any history surgery, verify the end tree is unchanged
 (`git diff <safety-branch> HEAD` is empty) and that each commit builds on its
 own.
 
+## Running roachtests
+
+Do not use `roachstress.sh`. Run roachtests with `roachtest run`, using
+`--count N` for repeated runs, and pass prebuilt binaries via `--cockroach`
+and `--workload`. This applies on my GCE worker too, even when a skill (e.g.
+`run-roachtest`) says to use `roachstress.sh`.
+
+The worker cannot build CockroachDB: Bazel's Go dependencies come from a
+private bucket that needs my own Google credentials. Cross-compile on my Mac
+(`./dev build cockroach-short workload roachtest --cross=linux`), copy the
+binaries to the worker, and run `roachtest run` there.
+
 ## Pull requests
 
 When opening a PR for the first time, open it as a draft and assign it to me
