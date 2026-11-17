@@ -23,6 +23,13 @@ mkdir -p ~/Library/Application\ Support/Code/User
 ln -sf ~/.shell/confs/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -sf ~/.shell/confs/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
+# Tailscale installs into Tailscale.localized; expose it at the usual path.
+# Guarded because setup.sh runs on every new shell and on Linux too, and
+# because ln onto an existing app directory would nest the link inside it.
+if [ -d /Applications/Tailscale.localized/Tailscale.app ] && [ ! -e /Applications/Tailscale.app ]; then
+  ln -s /Applications/Tailscale.localized/Tailscale.app /Applications/Tailscale.app
+fi
+
 # --- Zsh Installation ---
 
 if ! command -v zsh > /dev/null 2>&1; then
