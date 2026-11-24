@@ -16,6 +16,10 @@ ln -sf ~/.shell/confs/git/gitignore_global ~/.gitignore_global
 mkdir -p ~/.claude
 ln -sf ~/.shell/confs/claude/settings.json ~/.claude/settings.json
 ln -sf ~/.shell/confs/claude/CLAUDE.md ~/.claude/CLAUDE.md
+mkdir -p ~/.claude/skills
+for skill in ~/.shell/confs/claude/skills/*/; do
+  ln -sfn "${skill%/}" ~/.claude/skills/"$(basename "$skill")"
+done
 
 ln -sf ~/.shell/confs/cursorignore ~/.cursorignore
 
