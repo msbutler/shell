@@ -46,6 +46,19 @@ This patch <what changes, at the level of behavior and design>.
 - A commit with no prior deficiency (a pure addition, a mechanical rename) can
   skip "Previously" and just state what it does and why.
 
+## PR description
+
+For a multi-commit PR, the PR description is the concatenation of the PR's
+commit messages, in commit order, and nothing else: no separate summary, test
+plan, or checklist. Each commit contributes its full message (subject, body,
+trailers), and the PR title summarizes the PR as a whole.
+
+For a single-commit PR, the title is the commit subject and the description
+is the commit body, trailers included.
+
+When a commit message in an open PR is revised, update the PR description to
+match (`gh pr edit --body-file`), so the two never drift.
+
 ## What to leave out
 
 - Low-level detail the diff already shows: lists of functions renamed, files

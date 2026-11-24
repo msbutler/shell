@@ -65,8 +65,9 @@ auto-merge, touching other branches, or replying to reviewers.
    to match.
 
 7. **Push.** `git push --force-with-lease` to the PR branch. If the lease
-   fails, someone else pushed: do not retry, report it. Update the PR
-   description if the fixes or revised messages made it inaccurate.
+   fails, someone else pushed: do not retry, report it. Then rewrite the PR
+   description from the final commit messages, following the PR description
+   rule in `/revise-commit-message`.
 
 8. **Report.** One message covering:
    - commit messages: old and new subject for each commit that changed;
